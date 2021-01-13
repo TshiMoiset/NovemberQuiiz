@@ -24,9 +24,9 @@ namespace NovemberQuiiz
             Console.WriteLine("PS: Svara med Ja eller Nej!");
 
 
-            while (svar != "ja" && svar != "nej")
+            while (svar != "ja" && svar != "nej")           //Man måste svara ja eller nej för att programmet ska fortsätta.
             {
-                svar = Console.ReadLine().ToLower();
+                svar = Console.ReadLine().ToLower();        //Låter använderen fylla i med stora bokstäver.
 
                 if (svar == "ja")
                 {
@@ -318,6 +318,7 @@ namespace NovemberQuiiz
                 Console.WriteLine();
                 Console.WriteLine("Bra försök:/");
                 Console.WriteLine("Bättre lycka nästa gång:)");
+                Console.ForegroundColor = ConsoleColor.Magenta;
                 Console.WriteLine("Resultat: " + i + "/25 Poäng");
             }
 
@@ -326,6 +327,7 @@ namespace NovemberQuiiz
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine();
                 Console.WriteLine("Mycket bra jobbat :)");
+                Console.ForegroundColor = ConsoleColor.Magenta;
                 Console.WriteLine("Resultat: " + i + "/25 Poäng");
             }
 
