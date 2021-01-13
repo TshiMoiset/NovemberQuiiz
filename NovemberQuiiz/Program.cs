@@ -13,39 +13,35 @@ namespace NovemberQuiiz
             string svar5 = "";
 
             string score = "5";
-            int i = int.Parse(score);
+            int points = int.Parse(score);           //Int.Parse gör om stringen till en int 
 
             Console.Title = "November Quiiz";
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Hej och välkommen till min frågesport.");
-            Console.WriteLine("Du får 2 poängavdrag om du svarar fel på någon fråga.");
-            Console.WriteLine("Är du redo?");
-            Console.WriteLine();
-            Console.WriteLine("PS: Svara med Ja eller Nej!");
+            Console.WriteLine("Hej och välkommen till min frågesport.\nDu får 2 poängavdrag om du svarar fel på någon fråga.\nÄr du redo?\n\nPS: Svara med Ja eller Nej!");
 
 
             while (svar != "ja" && svar != "nej")           //Man måste svara ja eller nej för att programmet ska fortsätta.
             {
                 svar = Console.ReadLine().ToLower();        //Låter använderen fylla i med stora bokstäver.
 
-                if (svar == "ja")
+                if (svar == "ja")           //Vad som händer om man svara ja.
                 {
                     Console.WriteLine("Bra! Vi sätter igång.");
 
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine();
-                    Console.WriteLine("Fråga 1: " + score + " poäng");
-                    fråga1();
+                    Console.WriteLine("Fråga 1: " + score + " poäng");          //Score visar villket värde jag har valt att läga i string score.
+                    Question1();           //Konsolen hoppar till rad 337 för att sedan fortsätta från rad 51.
                 }
 
-                else if (svar == "nej")
+                else if (svar == "nej")         //Vad som händer om man svara nej.
                 {
                     Console.WriteLine("Mmmm........Vi sätter igång ändå.");
 
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine();
-                    Console.WriteLine("Fråga 1: " + score + " poäng");
-                    fråga1();
+                    Console.WriteLine("Fråga 1: " + score + " poäng");          //Score visar villket värde jag har valt att läga i string score.
+                    Question1();           //Konsolen hoppar till rad 337 för att sedan fortsätta från rad 51.
                 }
             }
 
@@ -61,13 +57,13 @@ namespace NovemberQuiiz
                     Console.WriteLine();
                     Console.Clear();
                     Console.WriteLine("Korrekt svar");
-                    i += 0;
+                    points += 0;         //Man får inga poäng om man svarar fel.
                     Console.WriteLine("Dina poäng: ***");
 
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine();
                     Console.WriteLine("Fråga 2: " + score + " poäng");
-                    fråga2();
+                    Question2();
                 }
 
                 if (svar == "x")
@@ -76,13 +72,13 @@ namespace NovemberQuiiz
                     Console.WriteLine();
                     Console.Clear();
                     Console.WriteLine("Felaktigt svar");
-                    i -= 7;
+                    points -= 7;         //Konsolen drar bort 7 poäng för att man ska ha -2 då den redan har gett 5 poäng utan att man har svarat. 
                     Console.WriteLine("Dina poäng: ***");
 
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine();
                     Console.WriteLine("Fråga 2: " + score + " poäng");
-                    fråga2();
+                    Question2();
                 }
 
                 if (svar == "2")
@@ -91,13 +87,13 @@ namespace NovemberQuiiz
                     Console.WriteLine();
                     Console.Clear();
                     Console.WriteLine("Felaktigt svar");
-                    i -= 7;
+                    points -= 7;          //Konsolen drar bort 7 poäng för att man ska ha -2 då den redan har gett 5 poäng utan att man har svarat. 
                     Console.WriteLine("Dina poäng: ***");
 
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine();
                     Console.WriteLine("Fråga 2: " + score + " poäng");
-                    fråga2();
+                    Question2();
                 }
             }
 
@@ -113,13 +109,13 @@ namespace NovemberQuiiz
                     Console.WriteLine();
                     Console.Clear();
                     Console.WriteLine("Felaktigt svar");
-                    i -= 2;
+                    points -= 2;         //Konsolen drar bort 2 poäng om man svara 1. 
                     Console.WriteLine("Dina poäng: ***");
 
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine();
                     Console.WriteLine("Fråga 3: " + score + " poäng");
-                    fråga3();
+                    Question3();
                 }
 
                 if (svar2 == "x")
@@ -128,13 +124,13 @@ namespace NovemberQuiiz
                     Console.WriteLine();
                     Console.Clear();
                     Console.WriteLine("Felaktigt svar");
-                    i -= 2;
+                    points -= 2;          //Konsolen drar bort 2 poäng om man svara x. 
                     Console.WriteLine("Dina poäng: ***");
 
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine();
                     Console.WriteLine("Fråga 3: " + score + " poäng");
-                    fråga3();
+                    Question3();
                 }
 
                 if (svar2 == "2")
@@ -143,13 +139,13 @@ namespace NovemberQuiiz
                     Console.WriteLine();
                     Console.Clear();
                     Console.WriteLine("Korrekt svar");
-                    i += 5;
+                    points += 5;          //Konsolen ger 5 poäng om man svara 2. 
                     Console.WriteLine("Dina poäng: ***");
 
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine();
                     Console.WriteLine("Fråga 3: " + score + " poäng");
-                    fråga3();
+                    Question3();
                 }
             }
 
@@ -165,13 +161,13 @@ namespace NovemberQuiiz
                     Console.WriteLine();
                     Console.Clear();
                     Console.WriteLine("Felaktigt svar");
-                    i -= 2;
+                    points -= 2;
                     Console.WriteLine("Dina poäng: ***");
 
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine();
                     Console.WriteLine("Fråga 4: " + score + " poäng");
-                    fråga4();
+                    Question4();
 
                 }
 
@@ -181,13 +177,13 @@ namespace NovemberQuiiz
                     Console.WriteLine();
                     Console.Clear();
                     Console.WriteLine("Korrekt svar");
-                    i += 5;
+                    points += 5;
                     Console.WriteLine("Dina poäng: ***");
 
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine();
                     Console.WriteLine("Fråga 4: " + score + " poäng");
-                    fråga4();
+                    Question4();
                 }
 
                 if (svar3 == "2")
@@ -196,13 +192,13 @@ namespace NovemberQuiiz
                     Console.WriteLine();
                     Console.Clear();
                     Console.WriteLine("Felaktigt svar");
-                    i -= 2;
+                    points -= 2;
                     Console.WriteLine("Dina poäng: ***");
 
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine();
                     Console.WriteLine("Fråga 4: " + score + " poäng");
-                    fråga4();
+                    Question4();
                 }
             }
 
@@ -218,13 +214,13 @@ namespace NovemberQuiiz
                     Console.WriteLine();
                     Console.Clear();
                     Console.WriteLine("Felaktigt svar");
-                    i -= 2;
+                    points -= 2;
                     Console.WriteLine("Dina poäng: ***");
 
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine();
                     Console.WriteLine("Fråga 5: " + score + " poäng");
-                    fråga5();
+                    Question5();
                 }
 
                 if (svar4 == "x")
@@ -233,13 +229,13 @@ namespace NovemberQuiiz
                     Console.WriteLine();
                     Console.Clear();
                     Console.WriteLine("Korrekt svar");
-                    i += 5;
+                    points += 5;
                     Console.WriteLine("Dina poäng: ***");
 
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine();
                     Console.WriteLine("Fråga 5: " + score + " poäng");
-                    fråga5();
+                    Question5();
                 }
 
                 if (svar4 == "2")
@@ -248,13 +244,13 @@ namespace NovemberQuiiz
                     Console.WriteLine();
                     Console.Clear();
                     Console.WriteLine("Felaktigt svar");
-                    i -= 2;
+                    points -= 2;
                     Console.WriteLine("Dina poäng: ***");
 
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine();
                     Console.WriteLine("Fråga 5: " + score + " poäng");
-                    fråga5();
+                    Question5();
                 }
             }
 
@@ -270,7 +266,7 @@ namespace NovemberQuiiz
                     Console.WriteLine();
                     Console.Clear();
                     Console.WriteLine("Felaktigt svar");
-                    i -= 2;
+                    points -= 2;
                     Console.WriteLine("Dina poäng: ***");
 
                     Console.ForegroundColor = ConsoleColor.Cyan;
@@ -284,7 +280,7 @@ namespace NovemberQuiiz
                     Console.WriteLine();
                     Console.Clear();
                     Console.WriteLine("Felaktigt svar");
-                    i -= 2;
+                    points -= 2;
                     Console.WriteLine("Dina poäng: ***");
 
                     Console.ForegroundColor = ConsoleColor.Cyan;
@@ -298,7 +294,7 @@ namespace NovemberQuiiz
                     Console.WriteLine();
                     Console.Clear();
                     Console.WriteLine("Korrekt svar");
-                    i += 5;
+                    points += 5;
                     Console.WriteLine("Dina poäng: ***");
 
                     Console.ForegroundColor = ConsoleColor.Cyan;
@@ -312,72 +308,56 @@ namespace NovemberQuiiz
             Console.WriteLine("Tryck [ENTER] för att beräkna ditt resultat:)");
             Console.ReadLine();
 
-            if (i < 15)
+            if (points < 15)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine();
                 Console.WriteLine("Bra försök:/");
                 Console.WriteLine("Bättre lycka nästa gång:)");
                 Console.ForegroundColor = ConsoleColor.Magenta;
-                Console.WriteLine("Resultat: " + i + "/25 Poäng");
+                Console.WriteLine("Resultat: " + points + "/25 Poäng");
             }
 
-            if (i > 15)
+            if (points > 15)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine();
                 Console.WriteLine("Mycket bra jobbat :)");
                 Console.ForegroundColor = ConsoleColor.Magenta;
-                Console.WriteLine("Resultat: " + i + "/25 Poäng");
+                Console.WriteLine("Resultat: " + points + "/25 Poäng");
             }
 
             Console.ReadLine();
         }
 
-        static void fråga1()
+        static void Question1()            //Konsolen läser vad som är skriven här
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Vem var Nikola Tesla?");
-            Console.WriteLine("1. Uppfinnare");
-            Console.WriteLine("X. Fysiker");
-            Console.WriteLine("2. Astronom");
-            Console.WriteLine("Svara med 1, X ELLER 2");
+            Console.WriteLine("Vem var Nikola Tesla?\n1. Uppfinnare\nX. Fysiker\n2. Astronom\n\nSvara med 1, X ELLER 2");
         }
 
-        static void fråga2()
+        static void Question2()
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("I vilken mytologi existerar Guden [Ares]?");
-            Console.WriteLine("1. Nordiska mytologin");
-            Console.WriteLine("X. Mesopotamisk mytologi");
-            Console.WriteLine("2. Grekiska mytologin");
+            Console.WriteLine($"I vilken mytologi existerar Guden [Ares]?\n1. Nordiska mytologin\nX. Mesopotamisk mytologi\n2. Grekiska mytologin");
         }
 
-        static void fråga3()
+        static void Question3()
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Mellan vilka år var Napoleon kejsare över Frankrike?");
-            Console.WriteLine("1. Mellan, 1683 - 1760");
-            Console.WriteLine("X. Mellan, 1805 - 1814");
-            Console.WriteLine("2. Mellan, 1765 - 1790");
+            Console.WriteLine("Mellan vilka år var Napoleon kejsare över Frankrike?\n1. Mellan, 1683 - 1760\nX. Mellan, 1805 - 1814\n2. Mellan, 1765 - 1790");
         }
 
-        static void fråga4()
+        static void Question4()
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Avsluta låttexten: Feeling my way through the darkness......");
-            Console.WriteLine("1. When I'm wiser and I'm older");
-            Console.WriteLine("X. Guided by a beating heart");
-            Console.WriteLine("2. But I know where to start");
+            Console.WriteLine("Avsluta låttexten: Feeling my way through the darkness......\n1. When I'm wiser and I'm older\nX. Guided by a beating heart\n2. But I know where to start");
         }
 
-        static void fråga5()
+        static void Question5()
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Vilken låt på youtube har flest visningar mellan dessa 3");
-            Console.WriteLine("1. Uptown Funk: Mark Ronson ft. Bruno Mars");
-            Console.WriteLine("X. See You Again: Wiz Khalifa ft. Charlie Puth");
-            Console.WriteLine("2. Shape Of You: Ed Sheeran");
+            Console.WriteLine("Vilken låt på youtube har flest visningar mellan dessa 3\n1. Uptown Funk: Mark Ronson ft. Bruno Mars\nX. See You Again: Wiz Khalifa ft. Charlie Puth\n2. Shape Of You: Ed Sheeran");
         }
     }
 }
