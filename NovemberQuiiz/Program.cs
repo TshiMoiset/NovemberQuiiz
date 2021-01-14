@@ -6,13 +6,13 @@ namespace NovemberQuiiz
     {
         static void Main(string[] args)
         {
-            string svar = "";
+            string svar1 = "";
             string svar2 = "";
             string svar3 = "";
             string svar4 = "";
             string svar5 = "";
 
-            string score = "5";
+            string score = "5";         //Hur mycket poäng man får
             int points = int.Parse(score);           //Int.Parse gör om stringen till en int 
 
             Console.Title = "November Quiiz";
@@ -20,11 +20,11 @@ namespace NovemberQuiiz
             Console.WriteLine("Hej och välkommen till min frågesport.\nDu får 2 poängavdrag om du svarar fel på någon fråga.\nÄr du redo?\n\nPS: Svara med Ja eller Nej!");
 
 
-            while (svar != "ja" && svar != "nej")           //Man måste svara ja eller nej för att programmet ska fortsätta.
+            while (svar1 != "ja" && svar1 != "nej")           //Man måste svara ja eller nej för att programmet ska fortsätta.
             {
-                svar = Console.ReadLine().ToLower();        //Låter använderen fylla i med stora bokstäver.
+                svar1 = Console.ReadLine().ToLower();        //Låter använderen fylla i med stora bokstäver.
 
-                if (svar == "ja")           //Vad som händer om man svara ja.
+                if (svar1 == "ja")           //Vad som händer om man svara ja.
                 {
                     Console.WriteLine("Bra! Vi sätter igång.");
 
@@ -34,7 +34,7 @@ namespace NovemberQuiiz
                     Question1();           //Konsolen hoppar till rad 337 för att sedan fortsätta från rad 51.
                 }
 
-                else if (svar == "nej")         //Vad som händer om man svara nej.
+                else if (svar1 == "nej")         //Vad som händer om man svara nej.
                 {
                     Console.WriteLine("Mmmm........Vi sätter igång ändå.");
 
@@ -47,26 +47,26 @@ namespace NovemberQuiiz
 
             //Svars alternativen till fråga 1 i quiz:en.
 
-            while (svar != "1" && svar != "x" && svar != "2")
+            while (svar1 != "1" && svar1 != "x" && svar1 != "2")
             {
-                svar = Console.ReadLine().ToLower();
+                svar1 = Console.ReadLine().ToLower();
 
-                if (svar == "1")
+                if (svar1 == "1")
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine();
                     Console.Clear();
                     Console.WriteLine("Korrekt svar");
-                    points += 0;         //Man får inga poäng om man svarar fel.
+                    points += 0;         //Konsolen behåller de 5 poängen man redan har. 
                     Console.WriteLine("Dina poäng: ***");
 
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine();
-                    Console.WriteLine("Fråga 2: " + score + " poäng");
+                    Console.WriteLine("Fråga 2: " + score + " poäng");          //Score visar hur mycket poäng jag har valt att stingen ska ge.
                     Question2();
                 }
 
-                if (svar == "x")
+                if (svar1 == "x")
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine();
@@ -77,11 +77,11 @@ namespace NovemberQuiiz
 
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine();
-                    Console.WriteLine("Fråga 2: " + score + " poäng");
+                    Console.WriteLine("Fråga 2: " + score + " poäng");          //Score visar hur mycket poäng jag har valt att stingen ska ge.
                     Question2();
                 }
 
-                if (svar == "2")
+                if (svar1 == "2")
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine();
@@ -92,7 +92,7 @@ namespace NovemberQuiiz
 
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine();
-                    Console.WriteLine("Fråga 2: " + score + " poäng");
+                    Console.WriteLine("Fråga 2: " + score + " poäng");          //Score visar hur mycket poäng jag har valt att stingen ska ge.
                     Question2();
                 }
             }
