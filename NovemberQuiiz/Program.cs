@@ -268,10 +268,6 @@ namespace NovemberQuiiz
                     Console.WriteLine("Felaktigt svar");
                     points -= 2;
                     Console.WriteLine("Dina poäng: ***");
-
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine();
-                    Console.WriteLine("Fråga 6: " + score + " poäng");
                 }
 
                 if (svar5 == "x")
@@ -282,10 +278,6 @@ namespace NovemberQuiiz
                     Console.WriteLine("Felaktigt svar");
                     points -= 2;
                     Console.WriteLine("Dina poäng: ***");
-
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine();
-                    Console.WriteLine("Fråga 6: " + score + " poäng");
                 }
 
                 if (svar5 == "2")
@@ -296,10 +288,6 @@ namespace NovemberQuiiz
                     Console.WriteLine("Korrekt svar");
                     points += 5;
                     Console.WriteLine("Dina poäng: ***");
-
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine();
-                    Console.WriteLine("Fråga 6: " + score + " poäng");
                 }
             }
 
